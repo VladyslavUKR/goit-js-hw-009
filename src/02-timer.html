@@ -6,28 +6,51 @@
     <title>Countdown timer</title>
     <link rel="stylesheet" href="css/common.css" />
   </head>
+  <style>
+    body {
+      background-color: darkgrey;
+    }
+
+    [addStyle] {
+      font-size: 40px;
+      color: white;
+      background-color: black;
+    }
+
+    button {
+      border: none;
+      color: black;
+      padding: 8px 15px;
+      display: inline-block;
+      font-size: 12px;
+
+      border-radius: 8px;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
   <body>
     <p><a href="index.html">Go back</a></p>
 
     <input type="text" id="datetime-picker" />
     <button type="button" data-start>Start</button>
 
-    <div class="timer">
+    <div clock class="timer">
       <div class="field">
-        <span class="value" data-days>00</span>
-        <span class="label">Days</span>
+        <span addStyle class="value" data-days>00</span>
+        <span addStyle class="label">Days</span>
       </div>
       <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
+        <span addStyle class="value" data-hours>00</span>
+        <span addStyle class="label">Hours</span>
       </div>
       <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
+        <span addStyle class="value" data-minutes>00</span>
+        <span addStyle class="label">Minutes</span>
       </div>
       <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+        <span addStyle class="value" data-seconds>00</span>
+        <span addStyle class="label">Seconds</span>
       </div>
     </div>
 
