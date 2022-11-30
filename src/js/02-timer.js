@@ -5,7 +5,7 @@ import Notiflix from 'notiflix';
 import { refs } from './scripts';
 
 // ---- виключення кнопки старт
-refs.startBtn.setAttribute('disabled', 'disabled');
+refs.startBtn.setAttribute('disabled', true);
 //----/ виключення кнопки старт
 
 let choiceTime = null;
@@ -18,7 +18,6 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     choiceTime = selectedDates[0].getTime();
-    console.log(choiceTime);
     isAvailableTime = choiceTime - Date.now();
     if (isAvailableTime <= 0) {
       Notiflix.Notify.failure('Please choose a date in the future');
@@ -34,7 +33,7 @@ refs.startBtn.addEventListener('click', onStartBtnClick);
 
 function onStartBtnClick() {
   timer.onClose();
-  refs.startBtn.setAttribute('disabled', 'disabled');
+  refs.startBtn.setAttribute('disabled', true);
 }
 const timer = {
   intervalID: null,
@@ -51,7 +50,6 @@ const timer = {
     this.intervalID = setInterval(() => {
       const currentTime = Date.now();
       this.deltaTime = choiceTime - currentTime;
-      console.log(this.deltaTime);
       const convertTime = convertMs(this.deltaTime);
       updateClockFace(convertTime);
       stopInterval(this.deltaTime, this.intervalID);
